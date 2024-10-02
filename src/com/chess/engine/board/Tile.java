@@ -2,6 +2,7 @@ package com.chess.engine.board;
 
 
 import com.chess.engine.pieces.Piece;
+import com.google.common.collect.ImmutableMap;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,8 +25,17 @@ public abstract class Tile {
 
     }
 
+    public static Tile createTile(final int tileCoordinate, final Piece piece ) {
+        if (piece != null) {
+            return new OccupiedTile(tileCoordinate, piece);
+        } else {
+            return EMPTY_TILES.get(tileCoordinate);
+        }
+    }
 
-    Tile(int tileCoordinate) {
+
+    private Tile(int tileCoordinate) {
+
         this.tileCoordinate = tileCoordinate;
     }
 
