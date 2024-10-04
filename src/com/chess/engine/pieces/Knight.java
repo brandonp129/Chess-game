@@ -7,6 +7,7 @@ import com.chess.engine.Alliance;
 import com.chess.engine.board.Tile;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class Knight extends Piece{
     }
 
     @Override
-    public List<Move> calculateLegalMoves(Board board){
+    public Collection<Move> calculateLegalMoves(Board board){
 
         int candidateDestinationCoordinate;
         final List<Move> legalMoves = new ArrayList<>();
