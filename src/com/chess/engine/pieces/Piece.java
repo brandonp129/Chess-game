@@ -36,4 +36,7 @@ public class Piece {
     }
 
 
+    public Integer getPiecePosition() {
+        return this.piecePosition;
+    }
 }
