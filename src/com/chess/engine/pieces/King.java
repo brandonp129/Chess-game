@@ -8,12 +8,14 @@ import com.chess.engine.board.Tile;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class King extends Piece{
 
     private final static int[] CANDIDATE_MOVE_COORDINATE = {-9, -8, -7, -1, 1, 7, 8, 9};
-    King(int piecePosition, Alliance pieceAlliance) {
+    public King(final Alliance pieceAlliance, final int piecePosition) {
+
         super(piecePosition, pieceAlliance);
     }
 
@@ -40,13 +42,13 @@ public class King extends Piece{
                     final Alliance pieceAlliance = pieceAtDestination.getPieceAlliance();
                     if(this.pieceAlliance != pieceAlliance) {
                         legalMoves.add(new Move.AttackMove(board, this,
-                                candidateDestinationCoordinate, pieceAtDestination))
+                                candidateDestinationCoordinate, pieceAtDestination));
                     }
                 }
             }
         }
 
-        return null;
+        return Collections.unmodifiableList(legalMoves);
 
     }
 
@@ -60,3 +62,4 @@ public class King extends Piece{
                 candidateOffset == 9);
     }
 }
+
