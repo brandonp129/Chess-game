@@ -10,11 +10,13 @@ public enum Alliance {
 
         @Override
         public boolean isWhite() {
+
             return true;
         }
 
         @Override
         public boolean isBlack() {
+
             return false;
         }
     },
@@ -27,11 +29,13 @@ public enum Alliance {
 
         @Override
         public boolean isBlack() {
+
             return true;
         }
 
         @Override
         public boolean isWhite() {
+
             return false;
         }
     };
