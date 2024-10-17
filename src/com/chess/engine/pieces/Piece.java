@@ -5,7 +5,7 @@ import com.chess.engine.board.Move;
 import com.chess.engine.board.Board;
 
 import java.util.Collection;
-
+import java.util.Collections;
 
 
 public class Piece {
@@ -15,7 +15,7 @@ public class Piece {
     protected final boolean isFirstMove;
 
 
-    Piece(final int piecePosition, final Alliance pieceAlliance) {
+    Piece(final Alliance pieceAlliance, final int piecePosition) {
 
         this.pieceAlliance = pieceAlliance;
         this.piecePosition = piecePosition;
@@ -34,11 +34,11 @@ public class Piece {
 
     public Collection<Move> calculateLegalMoves(final Board board) {
 
-        return null;
+        return Collections.emptyList();
     }
 
 
-    public Integer getPiecePosition() {
+    public int getPiecePosition() {
 
         return this.piecePosition;
     }

@@ -39,7 +39,7 @@ public class Board {
         for(final Piece piece : pieces) {
             legalMoves.addAll(piece.calculateLegalMoves(this));
         }
-        return List.copyOf(legalMoves);
+        return legalMoves;
     }
 
     private Collection<Piece> calculateActivePieces(final List<Tile> gameBoard, final Alliance alliance) {
@@ -66,8 +66,8 @@ public class Board {
             tiles[i] = Tile.createTile(i, builder.boardConfig.get(i));
 
         }
-        List<Tile> tiles1 = List.of(tiles);
-        return tiles1;
+
+        return List.of(tiles);
     }
 
     public static Board createStandardBoard() {
